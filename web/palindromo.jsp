@@ -4,6 +4,7 @@
     Author     : aluno
 --%>
 
+<%@page import="negocio.TratadorString"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,7 +14,11 @@
     </head>
     <body>
         <h1>Palindromo!</h1>
-
+        <%
+            TratadorString tratador = (TratadorString) session.getAttribute("tratador");
+            out.println(tratador.tratarPalindromo());
+        %>
+        <br />
         <input type="button" value="Voltar" onclick="history.back()" />
     </body>
 </html>

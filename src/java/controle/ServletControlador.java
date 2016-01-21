@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import negocio.TratadorString;
 
 /**
  *
@@ -33,22 +34,23 @@ public class ServletControlador extends HttpServlet {
             throws ServletException, IOException {
         try {
             HttpSession sessao = request.getSession();
-            final String texto = request.getParameter("txt");
-            
-            sessao.setAttribute("txt", texto);
+            String texto = request.getParameter("txt");
+
+            sessao.setAttribute("tratador", new TratadorString(texto));
             String acao = request.getParameter("btnAcao");
             if (acao != null) {
                 if (acao.equalsIgnoreCase("palindromo")) {
-                    request.getRequestDispatcher("palindromo.jsp");
+                    request.getRequestDispatcher("palindromo.jsp").forward(request, response);
                 } else if (acao.equalsIgnoreCase("tratadorEspacos")) {
-                    request.getRequestDispatcher("tratadorEspacos.jsp");
+                    request.getRequestDispatcher("tratadorEspacos.jsp").forward(request, response);
                 } else if (acao.equalsIgnoreCase("tratarCaracteresEsp")) {
-                    request.getRequestDispatcher("tratarCaracteresEsp.jsp");
+                    request.getRequestDispatcher("tratarCaracteresEsp.jsp").forward(request, response);
                 } else if (acao.equalsIgnoreCase("contarOcorrencias")) {
-                    request.getRequestDispatcher("contarOcorrencias.jsp");
+                    request.getRequestDispatcher("contarOcorrencias.jsp").forward(request, response);
                 }
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

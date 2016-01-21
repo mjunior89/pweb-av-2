@@ -35,4 +35,19 @@ public class TratadorString {
         return resultado;
     }
 
+    public String tratarEspacos() {
+        String resultado = "";
+        int tamanho = frase.length();
+        if (tamanho == 0) {
+            resultado = "Frase vazia!";
+        } else {
+            for (int i = tamanho; i >= 0; i--) {
+                if (this.frase.charAt(i) == ' ' && this.frase.charAt(i + 1) == ' ') {
+                    this.frase.charAt(i);
+                }
+            }
+        }
+        return resultado;
+    }
+
 }

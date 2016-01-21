@@ -13,6 +13,7 @@
     </head>
     <body>
         <h1>Contar Ocorrencias!</h1>
+        <br />
         <input type="button" value="Voltar" onclick="history.back()" />
     </body>
 </html>
