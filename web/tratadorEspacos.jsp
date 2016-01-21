@@ -10,10 +10,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Tratador de Espaços</title>
     </head>
     <body>
-        <h1>Tratador Ocorrencias!</h1>
+        <h1>Tratador de Espaços!</h1>
         <%
             TratadorString tratador = (TratadorString) session.getAttribute("tratador");
             out.println(tratador.tratarEspacos());

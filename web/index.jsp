@@ -15,7 +15,7 @@
         <form action="ServletControlador" method="GET">
             <h1>Avaliação 2 - PWEB!</h1>
             <div>
-                Digite o texto:
+                Digite a frase:
                 <br />
                 <input type="text" name="txt" />
                 <br />
